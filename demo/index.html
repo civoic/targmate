@@ -9,16 +9,19 @@
 </head>
 <body>
 <div class="main" style="padding-top:100px;">
-	<div class="test_node" id="source_node_1"></div>
-	<div class="test_node" id="source_node_2"></div>
+	<div class="test_node" id="source_node_1">source_node_1</div>
+	<div class="test_node" id="source_node_2">source_node_2</div>
 </div>
 
 <div class="bottom_line">
-	<div id="target_node"></div>
+	<div id="target_node_1">target 1</div>
+
+	<div id="target_node_2">target 2</div>
 </div>
 
 <script type="text/javascript">
-	$("#source_node_1").targmate({type: "jump"});
+	$("#source_node_1").targmate({type: "jump", targetId: "target_node_1"});
+	$("#source_node_2").targmate({type: "jump", targetId: "target_node_2"});
 </script>
 </body>
 </html>

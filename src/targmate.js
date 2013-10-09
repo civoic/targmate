@@ -29,19 +29,20 @@
             var startPos = $(srcNode).offset();
             var endPos = dstNode.offset();
             var dstWidth = dstNode.width();
+            var dstHeight = dstNode.height();
 
             $("body").append(cloneNode);
             cloneNode.css("position", "absolute");
             cloneNode.css("top", startPos.top);
             cloneNode.css("left", startPos.left);
-            cloneNode.animate({top:endPos.top, left:endPos.left, width: dstWidth}).fadeOut("slow");
+            cloneNode.animate({top:endPos.top, left:endPos.left, width: dstWidth, height: dstHeight}).fadeOut("slow");
         },
         jump: function(srcNode, dstNode, firstJumpPos) {
             var cloneNode = $(srcNode).clone();
             var startPos = $(srcNode).offset();
             var endPos = dstNode.offset();
             var dstWidth = dstNode.width();
-
+            var dstHeight = dstNode.height();
             $("body").append(cloneNode);
             cloneNode.css("position", "absolute");
             cloneNode.css("top", startPos.top);
@@ -50,7 +51,7 @@
             var firstAnimateLenOfTop = (startPos.top - endPos.top) / 4;
             var firstAnimateLenOfLeft = (endPos.left - startPos.left) / 4;
 
-            cloneNode.animate({top:startPos.top + firstAnimateLenOfTop, left: startPos.left + firstAnimateLenOfLeft}).animate({top:endPos.top, left:endPos.left, width: dstWidth}).fadeOut("slow");
+            cloneNode.animate({top:startPos.top + firstAnimateLenOfTop, left: startPos.left + firstAnimateLenOfLeft}).animate({top:endPos.top, left:endPos.left, width: dstWidth, height: dstHeight}).fadeOut("slow");
         },
     };
 
@@ -65,12 +66,13 @@
             */
         	var defaults = {
                 type : "direct",
+                targetId :　"",
             };
 
             var options = $.extend(defaults, options);
 
             var sourceNode = $(this);
-            var targetNode = $("#target_node");
+            var targetNode = $("#" + options.targetId);
 
             sourceNode.click(function(){
 
