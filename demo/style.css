@@ -2,7 +2,9 @@
 {
 	width:980px;
 	margin:0 auto;
-	height:600px;
+	height:600px;'
+	padding-top:100px;
+	padding-left: 350px;
 }
 
 .bottom_line
@@ -13,9 +15,10 @@
 	bottom:0px;
 	height: 80px;
 
-
 	background-color: #e1e1e1;
 }
+
+
 
 #source_node_1
 {
@@ -31,6 +34,6 @@
 	height:60px;
 	margin-top: 10px;
 	background-color: #d1d1d1;
-	margin-right: 500px;
-	float: right;
+	margin-left: 40px;
+	float: left;
 }
